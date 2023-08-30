@@ -39,7 +39,7 @@ const options = {
     keepClosingSlash: true
 };
 
-let srcFolder = './src';
+let srcFolder = './';
 let distFolder = './dist';
 
 let path = {
