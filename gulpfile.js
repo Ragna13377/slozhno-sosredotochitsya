@@ -39,7 +39,7 @@ const options = {
     keepClosingSlash: true
 };
 
-let srcFolder = './';
+let srcFolder = '.';
 let distFolder = './dist';
 
 let path = {
@@ -53,6 +53,7 @@ let path = {
     src: {
         html: `${srcFolder}/*.html`,
         scss: `${srcFolder}/styles/**/*.scss`,
+        font_style: `${srcFolder}/fonts/fonts.scss`,
         css: [`${srcFolder}/**/*.css`, `!${srcFolder}/**/fonts.css`],
         js: `${srcFolder}/scripts/**/*.js`,
         images: `${srcFolder}/images/**/*.{avif,webp,svg,ico,gif,png,jpg}`,
@@ -61,6 +62,7 @@ let path = {
     watch: {
         html: `${srcFolder}/**/*.html`,
         scss: `${srcFolder}/styles/**/*.scss`,
+        font_style: `${srcFolder}/fonts/fonts.scss`,
         css: `${srcFolder}/**/*.css`,
         js: `${srcFolder}/scripts/**/*.js`,
         images: `${srcFolder}/images/**/*.{avif,webp,svg,ico,gif,png,jpg}`,
@@ -69,7 +71,7 @@ let path = {
 }
 
 const font = gulp.series(otfToTtfAndWoff, ttfToWoff2, fontsStyle);
-const build = gulp.series(fonts, gulp.parallel(html, scss, css, js, images));
+const build = gulp.series(fonts, font_style, gulp.parallel(html, scss, js, images));
 const watch = gulp.series(clean, build, gulp.parallel(watchFiles, server));
 
 function server(params) {
@@ -107,6 +109,16 @@ function scss() {
         }))
         .pipe(gulpIf(isBuild, postCss(plugins)))
         .pipe(gulp.dest(path.dest.css))
+        .pipe(browserSync.stream())
+}
+
+function font_style(){
+    return gulp.src(path.src.font_style, {})
+        .pipe(plumber())
+        .pipe(sass({
+            outputStyle: "expanded"
+        }))
+        .pipe(gulp.dest(path.dest.fonts))
         .pipe(browserSync.stream())
 }
 
@@ -211,7 +223,8 @@ function clean() {
 function watchFiles() {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.scss], scss);
-    gulp.watch([path.watch.css], css);
+    gulp.watch([path.watch.font_style], font_style);
+    // gulp.watch([path.watch.css], css);
     gulp.watch([path.watch.images], images);
 }
 
