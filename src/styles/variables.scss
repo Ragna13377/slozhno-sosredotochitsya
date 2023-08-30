@@ -1,0 +1,22 @@
+/*
+  Переменные для вашего проекта
+  и их переопределение под различные устройства
+*/
+:root{
+  --logo-color-dark: #DB00FF;
+  --background-color-dark:  #000028;
+  --title-color-dark:  #FF0070;
+  --backdrop-subtitle-dark: #FF0070;
+  --subtitle-color-dark: #000028;
+  --text-color-dark: #F1B2CE;
+  --background-image-dark: url('../images/cover-image-dark.png');
+  --logo-color-light: #FFC2E6;
+  --background-color-light: #FFF1F7;
+  --title-color-light: #353430;
+  --backdrop-subtitle-light: #FF8DCB;
+  --subtitle-color-light: #353430;
+  --text-color-light: #353430;
+  --background-image-light: url('../images/cover-image-light.png');
+}
+
+
