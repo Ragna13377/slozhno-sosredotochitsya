@@ -1,0 +1,14 @@
+.page.theme_dark {
+  --logo-color: var(--logo-color-dark, #db00ff);
+  --background-color: var(--background-color-dark, #000028);
+  --title-color: var(--title-color-dark, #ff0070);
+  --backdrop-subtitle: var(--backdrop-subtitle-dark, #ff0070);
+  --subtitle-color: var(--subtitle-color-dark, #000028);
+  --text-color: var(--text-color-dark, #f1b2ce);
+  --background-image: var(
+    --background-image-dark,
+    url('../images/cover-image-dark.png')
+  );
+}
+
+/*# sourceMappingURL=dark.css.map */

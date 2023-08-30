@@ -1,5 +1,5 @@
 .page {
-  --site-padding: 20px;
+  --site-padding: clamp(10px, var(--media-375),20px);
   font-family: 'IBM Plex Mono', Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -104,6 +104,8 @@
     }
   }
   .header__content-title{
+    position: relative;
+    inset-inline-start: clamp(0, var(--media-375) , calc(-1 * var(--site-padding)));
     grid-area: title;
     color: var(--logo-color);
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -116,12 +118,12 @@
     align-self: center;
     font-weight: 700;
     color: var(--subtitle-color);
-    min-inline-size: 364px;
+    min-inline-size: clamp(354px, calc((100vw - 768px) * 1000), 364px);
   }
 }
 
 .main{
-  margin-block-start: 60px;
+  margin-block: clamp(40px, var(--media-375), 60px);
   padding-inline: var(--site-padding);
 }
 
@@ -194,7 +196,7 @@
     display: grid;
     gap: var(--site-padding);
     grid-template-columns: repeat(3, min(314px, 1fr));
-    grid-template-rows: 260px 315px 428px;
+    grid-template-rows: clamp(12rem, -0.75rem + 26.5625vw, 16.25rem) clamp(14.375rem, -1.5625rem + 33.2031vw, 19.6875rem) clamp(19.875rem, -0.75rem + 42.9688vw, 26.75rem);;
     grid-template-areas:
       "sunset sunset ice-cream"
       "tape books ice-cream"
@@ -221,6 +223,9 @@
   }
   .gallery__street{
     grid-area: street;
+  }
+  .gallery__title{
+    margin-block-end: clamp(10px, var(--media-375),20px);
   }
 }
 
@@ -252,8 +257,22 @@
     .header__content-title{
       font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     }
-    .header__content-description{
-      min-inline-size: 354px;
+  }
+  .section{
+    .section__text{
+      letter-spacing: 0.2px;
+    }
+  }
+  .section_vertical{
+    .section__list{
+      flex-direction: column;
+    }
+    .section__list-item{
+      width: 100%;
+      min-width: 100%;
+    }
+    .section__text{
+      letter-spacing: 0;
     }
   }
   .section:not(:last-child){
@@ -278,12 +297,6 @@
       display: flex;
       flex-direction: column;
     }
-  }
-}
-
-@media(width <= 375px){
-  .page{
-    --site-padding: 10px;
   }
 }
 

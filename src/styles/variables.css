@@ -1,23 +1,23 @@
+@charset "UTF-8";
 /*
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
-:root{
-  --logo-color-dark: #DB00FF;
-  --background-color-dark:  #000028;
-  --title-color-dark:  #FF0070;
-  --backdrop-subtitle-dark: #FF0070;
+:root {
+  --logo-color-dark: #db00ff;
+  --background-color-dark: #000028;
+  --title-color-dark: #ff0070;
+  --backdrop-subtitle-dark: #ff0070;
   --subtitle-color-dark: #000028;
-  --text-color-dark: #F1B2CE;
+  --text-color-dark: #f1b2ce;
   --background-image-dark: url('../images/cover-image-dark.png');
-  --logo-color-light: #FFC2E6;
-  --background-color-light: #FFF1F7;
+  --logo-color-light: #ffc2e6;
+  --background-color-light: #fff1f7;
   --title-color-light: #353430;
-  --backdrop-subtitle-light: #FF8DCB;
+  --backdrop-subtitle-light: #ff8dcb;
   --subtitle-color-light: #353430;
   --text-color-light: #353430;
   --background-image-light: url('../images/cover-image-light.png');
-  --media-375: calc((100vw - 375px) * 1000);
 }
 
-
+/*# sourceMappingURL=variables.css.map */
