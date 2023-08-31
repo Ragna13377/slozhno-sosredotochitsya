@@ -2,12 +2,30 @@
   --logo-color: var(--logo-color-ligth, #ffc2e6);
   --background-color: var(--background-color-ligth, #fff1f7);
   --title-color: var(--title-color-ligth, #353430);
-  --backdrop-subtitle: var(--backdrop-subtitle-ligth, #ff8dcb);
+  --backdrop-color: var(--backdrop-subtitle-ligth, #ff8dcb);
   --subtitle-color: var(--subtitle-color-ligth, #353430);
   --text-color: var(--text-color-ligth, #353430);
   --background-image: var(
     --background-image-light,
-    url(../images/cover-image-light.png)
+    url('../images/cover-image-light.png')
   );
   --rec-switcher: var(--is-rec-light, none);
 }
+
+@media (prefers-color-scheme: light) {
+  .page {
+    --logo-color: var(--logo-color-ligth, #ffc2e6);
+    --background-color: var(--background-color-ligth, #fff1f7);
+    --title-color: var(--title-color-ligth, #353430);
+    --backdrop-color: var(--backdrop-subtitle-ligth, #ff8dcb);
+    --subtitle-color: var(--subtitle-color-ligth, #353430);
+    --text-color: var(--text-color-ligth, #353430);
+    --background-image: var(
+      --background-image-light,
+      url('../images/cover-image-light.png')
+    );
+    --rec-switcher: var(--is-rec-light, none);
+  }
+}
+
+/*# sourceMappingURL=light.css.map */

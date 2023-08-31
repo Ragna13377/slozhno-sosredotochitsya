@@ -1,16 +1,21 @@
 .page {
+  --logo-color: var(--logo-color-dark, #DB00FF);
+  --background-color: var(--background-color-dark, #000028);
+  --title-color: var(--title-color-dark, #FF0070);
+  --backdrop-color: var(--backdrop-subtitle-dark, #FF0070);
+  --subtitle-color: var(--subtitle-color-dark, #000028);
+  --text-color: var(--text-color-dark, #F1B2CE);
+  --background-image: var(--background-image-dark, url('../images/cover-image-dark.png'));
+  --rec-switcher: var(--is-rec-dark, flex);
+
   --site-padding: clamp(10px, var(--media-375),20px);
-  font-family: 'IBM Plex Mono', Arial, sans-serif;
+  font-family: 'IBMPlexMono', Arial, monospace;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 23.4px;
-  background-color: var(--background-color);
-  background-image: var(--background-image);
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: var(--background-color) var(--background-image) no-repeat fixed center;
 }
 
 .decorated-zone{
@@ -49,7 +54,7 @@
       "title title"
       ". description";
   height: 100dvh;
-  padding: var(--site-padding, 20px);
+  padding: var(--site-padding);
   .header__theme-menu{
     grid-area: buttons;
   }
@@ -70,6 +75,7 @@
     background-color: transparent;
     border: 1px solid transparent;
     cursor: pointer;
+    transition: border 0.3s ease;
     &:hover{
       border:  1px solid currentColor;
     }
@@ -112,7 +118,7 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     font-weight: 700;
     line-height: 82.5%;
-    text-shadow: 4px 4px 0 #FF0070;
+    text-shadow: 4px 4px 0 var(--backdrop-color);
   }
   .header__content-description{
     grid-area: description;
@@ -142,8 +148,8 @@
   .section__title{
     font-size: 18px;
     color: var(--title-color);
-    inline-size: calc((100% - 40px) / 3);
-    min-inline-size: calc((100% - 40px) / 3);
+    inline-size: calc((100% - var(--site-padding) * 2) / 3);
+    min-inline-size: calc((100% - var(--site-padding) * 2) / 3);
     font-weight: 700;
   }
 
@@ -151,7 +157,8 @@
     color: var(--text-color);
   }
   .section__link{
-    text-shadow: 2px 2px 0 var(--backdrop-subtitle);
+    text-shadow: 2px 2px 0 var(--backdrop-color);
+    transition: border 0.3s ease;
     &:hover{
       text-decoration: underline;
       text-decoration-color: currentColor;
@@ -175,11 +182,12 @@
   font-weight: 400;
 }
 .subtitle_no-content{
-  margin-block-end: 0;
+  margin-block-end: 20px;
 }
 
 .section_vertical{
   flex-direction: column;
+  gap: 20px;
   .section__list{
     display: flex;
     flex-direction: row;
@@ -240,19 +248,18 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     font-weight: 700;
     line-height: 82.5%;
-    text-shadow: 2px 2px 0 #FF0070;
+    text-shadow: 2px 2px 0 var(--backdrop-color);
   }
 }
 
 .title-decor{
-  background-color: var(--backdrop-subtitle);
+  background-color: var(--backdrop-color);
 }
 
 @media(width <= 768px){
   .header{
     .header__theme-menu-list{
       flex-direction: column;
-      justify-content: center;
       align-items: end;
     }
     .header__content-title{
@@ -260,8 +267,9 @@
     }
   }
   .section{
+    gap: clamp(1.25rem, 0.9518rem + 1.2723vw, 1.5625rem);
     .section__text{
-      letter-spacing: 0.2px;
+      letter-spacing: clamp(0rem, var(--media-375), 0.2px);
     }
   }
   .section_vertical{
@@ -298,31 +306,5 @@
       display: flex;
       flex-direction: column;
     }
-  }
-}
-
-@media(prefers-color-scheme: dark){
-  .page{
-    --logo-color: var(--logo-color-dark, #DB00FF);
-    --background-color: var(--background-color-dark, #000028);
-    --title-color: var(--title-color-dark, #FF0070);
-    --backdrop-subtitle: var(--backdrop-subtitle-dark, #FF0070);
-    --subtitle-color: var(--subtitle-color-dark, #000028);
-    --text-color: var(--text-color-dark, #F1B2CE);
-    --background-image: var(--background-image-dark, url('../images/cover-image-dark.png'));
-    --rec-switcher: var(--is-rec-dark, flex);
-  }
-}
-
-@media(prefers-color-scheme: light){
-  .page{
-    --logo-color: var(--logo-color-ligth, #FFC2E6);
-    --background-color: var(--background-color-ligth, #FFF1F7);
-    --title-color: var(--title-color-ligth, #353430);
-    --backdrop-subtitle: var(--backdrop-subtitle-ligth, #FF8DCB);
-    --subtitle-color: var(--subtitle-color-ligth, #353430);
-    --text-color: var(--text-color-ligth, #353430);
-    --background-image: var(--background-image-light, url('../images/cover-image-light.png'));
-    --rec-switcher: var(--is-rec-light, none);
   }
 }
