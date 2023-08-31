@@ -9,7 +9,7 @@
   --rec-switcher: var(--is-rec-dark, flex);
 
   --site-padding: clamp(10px, var(--media-375),20px);
-  font-family: 'IBMPlexMono', Arial, monospace;
+  font-family: var(--document-main-font, Arial, monospace);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
