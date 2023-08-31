@@ -1,6 +1,6 @@
 .page {
   --site-padding: clamp(10px, var(--media-375), 20px);
-  font-family: 'IBM Plex Mono', Arial, sans-serif;
+  font-family: IBM Plex Mono, Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -295,7 +295,7 @@
     --text-color: var(--text-color-dark, #f1b2ce);
     --background-image: var(
       --background-image-dark,
-      url('../images/cover-image-dark.png')
+      url(../images/cover-image-dark.png)
     );
     --rec-switcher: var(--is-rec-dark, flex);
   }
@@ -310,10 +310,8 @@
     --text-color: var(--text-color-ligth, #353430);
     --background-image: var(
       --background-image-light,
-      url('../images/cover-image-light.png')
+      url(../images/cover-image-light.png)
     );
     --rec-switcher: var(--is-rec-light, none);
   }
 }
-
-/*# sourceMappingURL=style.css.map */

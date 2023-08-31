@@ -10,17 +10,15 @@
   --backdrop-subtitle-dark: #ff0070;
   --subtitle-color-dark: #000028;
   --text-color-dark: #f1b2ce;
-  --background-image-dark: url('../images/cover-image-dark.png');
+  --background-image-dark: url(../images/cover-image-dark.png);
   --logo-color-light: #ffc2e6;
   --background-color-light: #fff1f7;
   --title-color-light: #353430;
   --backdrop-subtitle-light: #ff8dcb;
   --subtitle-color-light: #353430;
   --text-color-light: #353430;
-  --background-image-light: url('../images/cover-image-light.png');
+  --background-image-light: url(../images/cover-image-light.png);
   --media-375: calc((100vw - 375px) * 1000);
   --is-rec-light: none;
   --is-rec-dark: flex;
 }
-
-/*# sourceMappingURL=variables.css.map */

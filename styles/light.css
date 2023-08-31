@@ -7,9 +7,7 @@
   --text-color: var(--text-color-ligth, #353430);
   --background-image: var(
     --background-image-light,
-    url('../images/cover-image-light.png')
+    url(../images/cover-image-light.png)
   );
   --rec-switcher: var(--is-rec-light, none);
 }
-
-/*# sourceMappingURL=light.css.map */
