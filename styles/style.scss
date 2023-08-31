@@ -89,7 +89,7 @@
     inset-block-start: var(--site-padding, 20px);
     line-height: 25px;
     text-transform: uppercase;
-    display: flex;
+    display: var(--rec-switcher);
     align-items: center;
     gap: 10px;
     &:after{
@@ -309,6 +309,7 @@
     --subtitle-color: var(--subtitle-color-dark, #000028);
     --text-color: var(--text-color-dark, #F1B2CE);
     --background-image: var(--background-image-dark, url('../images/cover-image-dark.png'));
+    --rec-switcher: var(--is-rec-dark, flex);
   }
 }
 
@@ -321,10 +322,6 @@
     --subtitle-color: var(--subtitle-color-ligth, #353430);
     --text-color: var(--text-color-ligth, #353430);
     --background-image: var(--background-image-light, url('../images/cover-image-light.png'));
-  }
-  .header{
-    .header__recording{
-      display: none;
-    }
+    --rec-switcher: var(--is-rec-light, none);
   }
 }
