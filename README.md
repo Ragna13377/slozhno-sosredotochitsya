@@ -10,3 +10,5 @@
 ## Важно!
 
 Не забыть ```npm i```
+
+https://github.com/Ragna13377/slozhno-sosredotochitsya
